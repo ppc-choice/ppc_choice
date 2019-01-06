@@ -5,9 +5,9 @@
   "engines": {
     "node": "10.x"
   },
-  "main": "serverApp.js",
+  "main": "/bin/www",
   "scripts": {
-    "start": "node serverApp.js"
+    "start": "nodejs ./bin/www"
   },
   "dependencies": {
     "ejs": "^2.6.1",
