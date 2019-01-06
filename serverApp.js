@@ -11,9 +11,8 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 */
 
-#!/usr/bin/nodejs
 var debug = require('debug')('ppc_choice');
-var app = require('../app');
+var app = require('app');
 
 app.set('port', process.env.PORT || 3000);
 
