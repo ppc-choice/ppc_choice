@@ -11,6 +11,7 @@ const session = require('express-session');
 require('./config/passport')(passport);
 
 
+require('dotenv').config()
 const PORT = process.env.PORT || 3000
 const comparison = require('./routes/controller')
 const index = require('./routes/controller')
@@ -43,6 +44,8 @@ express()
   .get('/comparison', comparison )
   .get('/getGrade/:idCurso', comparison )
   .get('/compare/:idCursoAtual/:idCursoAlvo', comparison )
+  .get('/settings/password', comparison )
+  .post('/update/password', comparison )
   .use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
