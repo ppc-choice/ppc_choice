@@ -7,7 +7,7 @@
   },
   "main": "serverApp.js",
   "scripts": {
-    "start": "nodemon serverApp.js"
+    "start": "node serverApp.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
