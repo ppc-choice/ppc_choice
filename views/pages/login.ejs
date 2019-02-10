@@ -1,4 +1,16 @@
-<% layout('../layout') -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../templates/head.ejs %>
+</head>
+
+<body>
+
+<!-- Insert Body here -->
+<main role="main" class="container">
+
+    <div class="starter-template">
+
       <div class="jumbotron mt-4" style="width: 400px; margin-left: 200px"> 
       <form class="form-signin" action="/login" method="POST">
       <img class="mb-4" src="/images/logo_ppc.png" alt="" >
@@ -16,3 +28,12 @@
       <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
     </form>
     </div>
+    </div>
+
+</main><!-- /.container -->
+
+<% include ../templates/footer.ejs %>
+
+<% include ../templates/includes.ejs %>
+</body>
+</html>

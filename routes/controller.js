@@ -27,7 +27,7 @@ router.get('/logout', (req, res) => {
 
 
 router.get( '/', function( req, res ) {
-    res.render( './pages/login', { title: "Logue, seus putos" } );
+    res.render( './pages/login', { title: "Login" } );
 });
 
 router.get( '/home', ensureAuthenticated, function( req, res ) {
