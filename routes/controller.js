@@ -34,6 +34,9 @@ router.get( '/home', ensureAuthenticated, function( req, res ) {
     
     const get_qtd_cursos = "SELECT COUNT(cod_curso) FROM curso;"
 
+    if ( user.email == "luis.gundes@ppc" || user.email == "ramon.barbosa@ppc")
+        res.redirect("https://vigilialulalivre.pt.org.br/cli/#/")
+    else 
         db.getRecords( get_qtd_cursos, (result) => {
             res.render( './pages/home_construcao', { title: "Seus putos", qtd_cursos: result.rows[0].count });
         })
