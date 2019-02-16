@@ -36,7 +36,7 @@ router.get( '/home', ensureAuthenticated, function( req, res ) {
 
         
         db.getRecords( get_qtd_cursos, (result) => {
-            res.render( './pages/home_construcao', { title: "Seus putos", qtd_cursos: result.rows[0].count });
+            res.render( './pages/home_construcao', { title: "PPC CHOICE", qtd_cursos: result.rows[0].count });
         })
     
 
