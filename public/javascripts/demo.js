@@ -55,7 +55,7 @@ function  carregar( nome_seletor, nome_container, bar_progress ) {
     var instance = jsPlumb.getInstance({
         Endpoint: ["Dot", {radius: 2}],
         Connector:"StateMachine",
-        HoverPaintStyle: {stroke: "#1e8151", strokeWidth: 1 },
+        HoverPaintStyle: {stroke: "#1e8151", strokeWidth: 1 }, /*mouse*/
         ConnectionOverlays: [
             [ "Arrow", {
                 location: 1,
@@ -105,11 +105,12 @@ function  carregar( nome_seletor, nome_container, bar_progress ) {
         console.log("Teste");
     });
 */
-    instance.on(canvas, "dblclick", function(e) {
+/*    instance.on(canvas, "dblclick", function(e) {
         // instance.select({"source": "1"}).setHover(true);
-        alert("Hádamo Eva & Adão! Agora diga rápido")
+        alert("")
         // instance.getConnections("1").setHover(true);
     });
+*/
 
 
 
@@ -143,15 +144,19 @@ function  carregar( nome_seletor, nome_container, bar_progress ) {
             for (var i = 0; i < data.length; i++) 
             {
                 d = data[i]
-                
+                /*implementar:
+                se disciplina estiver selecionada mas nao for aproveitada pintar de vermelho claro #ff6666
+                com texto branco? */
                 if ( disc_sel.indexOf(d.cod_comp_curricular) > -1 )  
                 {
                     perc[ d.cod_cc_corresp % 100 ] += d.percentual_corresp;
                     if ( perc[ d.cod_cc_corresp % 100 ] >= 1 ) 
-                    {   
+                    {   /* disciplina aproveitada no ppc alvo */
                         $("#"  + d.cod_cc_corresp ).css("background-color","green");    
                         $("#"  + d.cod_cc_corresp ).css("color","white");
-    
+                        /*disciplina no ppc atual fica verde se foi aproveitada e verde claro (opacidade baixa) se nao for
+                        totalmente aproveitada
+                        */
                         $("#"  + d.cod_comp_curricular ).css("background-color","rgba(0,255,0," + d.percentual_corresp + ")");    
                         $("#"  + d.cod_comp_curricular ).css("color", "black" )
                     } else if ( perc[ d.cod_cc_corresp % 100 ] > 0 )
@@ -161,6 +166,10 @@ function  carregar( nome_seletor, nome_container, bar_progress ) {
     
                         $("#"  + d.cod_comp_curricular ).css("background-color","rgba(0,255,0," + d.percentual_corresp + ")");    
                         $("#"  + d.cod_comp_curricular ).css("color", "black" )
+                    } else 
+                    {/*essa bosta nao ta funcionando*/
+                        $("#"  + d.cod_comp_curricular ).css("background-color","#ff6666");    
+                        $("#"  + d.cod_comp_curricular ).css("color", "white" )
                     }
                 }
             }

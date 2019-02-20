@@ -1,7 +1,19 @@
 <% layout('layout') -%>
 
- <div class="jtk-page-container" id="export-pdf">
-                    <div class="row ">
+ <div class="jtk-page-container-fluid" id="export-pdf">
+        <div class="card panel panel-default center-block">
+            <div class="panel-heading">
+                    <h4>Legenda</h4>
+            </div>
+             Selecionada
+             <br>Pós Requisitos
+             <br>Pré Requisitos
+             <br>Aproveitada 100%
+             <br>Aproveitada 50%
+             <br>Não Aproveitada
+        </div>
+
+                    <div class="row center-block ">
                         <div class="col-md-12">     
                             <form>
                             <div class="form-group" style="">
@@ -102,6 +114,52 @@
                         <div class="col-md-4">     <!-- style="background:yellow" -->
                             <a href="javascript:window.print()" >Salvar</a>
                         </div> <!-- col-md-12 -->
-                    </div>      
-                  
-                </div><!-- /.container -->  
+                    </div>  
+
+<!--
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Pie Series</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chart1"></div>
+                </div>
+            </div>
+        </div>
+    </div>   
+<script >
+    jQuery(function ($) {
+        var data1 = [12, 3, 4, 2];
+        var data2 = [3, 9, 12, 14];       
+            
+        $(function () {            
+            $("#chart1").shieldChart({
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                axisY: {
+                    title: {
+                        text: "Break-Down for selected quarter"
+                    }
+                },               
+                dataSeries: [{
+                    seriesType: "pie",
+                    enablePointSelection: true,
+                    data: data1
+                }]
+            });
+
+        
+
+       
+        });
+      
+    });
+</script> -->
+
+
+   
+</div><!-- /.container -->  

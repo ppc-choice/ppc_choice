@@ -1,7 +1,8 @@
 .starter-template{
     width: 1400px;
-    margin-top: 80px;
+    margin-top: 90px;
     margin-left: -15%;
+
     justify-content: center;
 }
 
@@ -22,7 +23,7 @@
     -moz-border-radius: 8px;
     border-radius: 8px;
     opacity: 0.8;
-    cursor: move;
+    cursor: pointer;
     background-color: white;
     font-size: 11px;
     -webkit-transition: background-color 0.25s ease-in;
@@ -37,7 +38,7 @@
 
 .w:hover {
     background-color: #5c96bc;
-    color: white;
+    color: black;
 
 }
 
@@ -47,9 +48,10 @@
     transition: background-color 0.25s ease-in;
 }
 
+/* mouseover pre requisito*/
 .aLabel.jtk-hover, .jtk-source-hover, .jtk-target-hover {
     background-color: #1e8151;
-    color: white;
+    color: black;
 }
 
 .aLabel {

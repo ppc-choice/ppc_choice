@@ -1,3 +1,9 @@
+/**
+  * Name: style
+  * Version: 1.0
+  * Author: hadamo egito
+
+*/
 body {
   padding: 50px;
   padding-top: 60px;
@@ -20,13 +26,7 @@ body {
 
 
 
-/**
-  * Name: ComparaÃ§ÃĢo
-  * Version: 1.0
-  * Author: HÃĄdamo
 
-  SÃģ para fins de teste, depois pode colocar dentro do arquivo style.css ou usar este arquivo para todas as alteraÃ§Ãĩes que fizermos aqui
-*/
 .comparacao 
 {
   border: 1px solid #ccc;
@@ -73,3 +73,39 @@ transition: .3s ease all;
 } 
 
 .pass_show .ptxt:hover{color: #333333;} 
+
+.navbar
+{
+  min-height: 80px;
+}
+
+.navbar-default
+{
+  background-color: rgba(0,0,0,0.920);
+  border-color: transparent;
+  padding-top: 15px;
+}
+#nav .navbar-nav ul
+{
+  float: none;
+}
+
+
+/* card das legendas*/
+.card
+{
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  transition: 0.3s;
+  width: 40%;
+  height: 190px;
+  margin-bottom: 40px;
+}
+ .panel-default >.panel-heading
+{
+  background-color: rgba(0,0,0,0.920);
+}
+ .panel-default >.panel-heading > h4
+ {
+  color: white;
+ }
