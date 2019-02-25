@@ -1,20 +1,15 @@
 <% layout('layout') -%>
 
  <div class="jtk-page-container-fluid" id="export-pdf">
-        <div class="card panel panel-default center-block">
-            <div class="panel-heading">
-                    <h4>Legenda</h4>
-            </div>
-             Selecionada
-             <br>Pós Requisitos
-             <br>Pré Requisitos
-             <br>Aproveitada 100%
-             <br>Aproveitada 50%
-             <br>Não Aproveitada
-        </div>
+        <div class="row"><!-- GAMBIARRA PQ TA FICANDO DEBAIXO DO NAVBAR -->
+            <div class="col-md-12"> 
+                        <br>
+                        <br>    
+            </div> <!-- col-md-12 -->
+        </div> <!--row--> 
 
-                    <div class="row center-block ">
-                        <div class="col-md-12">     
+                    <div class="row  ">
+                        <div class="col-md-11">     
                             <form>
                             <div class="form-group" style="">
                             <select class="form-control " id = "curso-atual"">
@@ -29,7 +24,12 @@
                             </select> 
                             </div>
                             </form>
-                        </div>    
+                        </div>
+                        <div class="col-md-1">
+                            <button id="toggle-button" type="button" class="btn btn-danger ppcbutton" data-toggle="collapse" data-target="#canvasPpcAtual" aria-expanded="true" title="Ocultar/Mostrar PPC">
+                                <span  class="glyphicon glyphicon-eye-open"></span>
+                            </button>
+                        </div> <!--Botao Ocultar/Mostrar-->   
                     </div><!-- /.row -->           
                     
                     <!-- <div class="row"> -->
@@ -42,15 +42,62 @@
                         <div class="col-md-12">     
                             <!-- <div class="comparacao"> -->
                               <!-- <div class="jtk-demo-main"> -->
-                                          <!-- demo -->
-                                          <div class="jtk-demo-canvas canvas-wide statemachine-demo jtk-surface jtk-surface-nopan" id="canvas" >
-                                          
-
-
-                                        </div>
-                                <!-- </div> -->
                                 
-
+                                <div id="canvasPpcAtual" class="collapse in">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <ul data-toggle="collapse" href="#legendaPPCatual">Legenda</ul>
+                                            </h4>
+                                        </div>
+                                        <div id="legendaPPCatual" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <!-- Os id's ainda não estão sendo usados, quero usar dps
+                                                    para deixar as cores iguais as cores dos baloes do canvas-->
+                                                <div class="col-md-6">
+                                                    <p><span id="selecionado" class="glyphicon glyphicon-th-large"
+                                                    style="color: blue;"></span>
+                                                    Disciplina Selecionada
+                                                    </p>
+                                                    <p><span id="apro100" class="glyphicon glyphicon-th-large" 
+                                                        style="color: rgb(0, 255, 0);"></span>
+                                                        Disciplina Aproveitada como 100%
+                                                    </p>
+                                                    <p><span id="apro50" class="glyphicon glyphicon-th-large"
+                                                        style="color: rgba(0, 255, 0, 0.5);"></span>
+                                                        Disciplina Aproveitada como 50%
+                                                    </p>
+                                                    <p><span id="perdido" class="glyphicon glyphicon-th-large"
+                                                        style="color: #ff6666;"></span>
+                                                        Disciplina Perdida
+                                                    </p>
+                                                </div> <!--coluna legenda -->
+                                                <div class="col-md-6">
+                                                    <p><span id="prereq" class="glyphicon glyphicon-th-large"
+                                                    style="color: #054458;"></span>
+                                                    Disciplina Atual é Pré-requisito
+                                                    </p>
+                                                    <p><span id="prereq" class="glyphicon glyphicon-th-large"
+                                                    style="color: #007fa3;"></span>
+                                                    Disciplina Atual é Pós-requisito
+                                                    </p>
+                                                </div>
+                                            </div><!--legenda oculta-->
+                                        </div>
+                                    </div>
+                                    <!-- container ppc atual -->
+                                    <div class="jtk-demo-canvas canvas-wide statemachine-demo jtk-surface jtk-surface-nopan " id="canvas"></div>  
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <ul data-toggle="collapse" href="#statsPPCatual">Estatísticas</ul>
+                                            </h4>
+                                        </div>
+                                        <div id="statsPPCatual" class="panel-collapse collapse">
+                                            <div class="panel-body">Panel Body</div>
+                                        </div>
+                                    </div>     
+                                </div><!-- ocultado pelo botao hideshow-->
                             <!-- </div>  comparacao -->
                         </div><!-- col-md-12 -->
                     </div><!-- /.row -->     
@@ -58,7 +105,7 @@
                     <br>
 
                     <div class="row ">
-                        <div class="col-md-12">     
+                        <div class="col-md-11">     
                             <form>
                             <div class="form-group" style="">
                             <select class="form-control " id = "curso-alvo"">
@@ -72,7 +119,12 @@
                             </select> 
                             </div>
                             </form>
-                        </div>    
+                        </div><!--col md 12-->
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-danger ppcbutton" data-toggle="collapse" data-target="#canvasPpcAlvo" aria-expanded="true" title="Ocultar/Mostrar PPC">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </button>
+                        </div> <!--Botao Ocultar/Mostrar-->   
                     </div><!-- /.row -->           
                     
                     <!-- <div class="row"> -->
@@ -83,16 +135,31 @@
                     
                     <div class="row">
                         <div class="col-md-12">     
-                            <!-- <div class="comparacao"> -->
-                              <!-- <div class="jtk-demo-main"> -->
-                                          <!-- demo -->
-                                          <div class="jtk-demo-canvas canvas-wide statemachine-demo jtk-surface jtk-surface-nopan" id="grade-alvo" >
-                                          
-
-
-                                        </div>
-                                <!-- </div> -->
-                                
+                            <div id="canvasPpcAlvo" class="collapse in">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <ul data-toggle="collapse" href="#legendaPPCalvo">Legenda</ul>
+                                        </h4>
+                                    </div>
+                                    <div id="legendaPPCalvo" class="panel-collapse collapse">
+                                        <div class="panel-body">Panel Body</div>
+                                    </div>
+                                </div>
+                                <!-- canvas ppc alvo -->
+                                <div class="jtk-demo-canvas canvas-wide statemachine-demo jtk-surface jtk-surface-nopan" id="grade-alvo" ></div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <ul data-toggle="collapse" href="#statsPPCalvo">Estatísticas</ul>
+                                        </h4>
+                                    </div>
+                                    <div id="statsPPCalvo" class="panel-collapse collapse">
+                                        <div class="panel-body">Panel Body</div>
+                                    </div>
+                                </div> 
+                                    <!-- </div> -->
+                            </div> <!-- ocultado pelo botao hideshow--> 
 
                             <!-- </div>  comparacao -->
                         </div><!-- col-md-12 -->
@@ -101,19 +168,18 @@
 
 
                     <div class="row">
-                        <div class="col-md-12">     <!-- style="background:yellow" -->
-                           
-                            
+                        <div class="col-md-12">     
                       </div> <!-- col-md-12 -->
-                    </div>               
-                    <div class="row espaco-comp">
-                        <div class="col-md-4">     <!-- style="background:yellow" -->
-                            <button class="btn btn-primary center-block " type="submit" action="comparar_grades( 'curso-atual', 'curso-alvo');" id = "comparar" >Comparar</button>                            
-                        </div> <!-- col-md-12 -->
-
-                        <div class="col-md-4">     <!-- style="background:yellow" -->
-                            <a href="javascript:window.print()" >Salvar</a>
-                        </div> <!-- col-md-12 -->
+                    </div> <!--row-->              
+                    <div class="row">
+                        <div class="text-center">
+                            <div class="col-md-12 ">     <!-- style="background:yellow" -->
+                            <button class="btn btn-danger ppcbutton " type="submit" action="comparar_grades( 'curso-atual', 'curso-alvo');" id = "comparar" >Comparar</button>                            
+                            <button class="btn btn-danger ppcbutton ">
+                                <a href="javascript:window.print()" >Salvar</a>
+                            </button>
+                            </div> <!-- col-md-4 -->
+                        </div>
                     </div>  
 
 <!--

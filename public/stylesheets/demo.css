@@ -1,3 +1,7 @@
+
+
+/*
+starter template foi desativado, originalmente seria uma div onde seria chamada o body
 .starter-template{
     width: 1400px;
     margin-top: 90px;
@@ -5,7 +9,7 @@
 
     justify-content: center;
 }
-
+*/
 .demo {
     /* for IE10+ touch devices */
     touch-action:none;
