@@ -235,7 +235,7 @@ visibility: visible;
  content: "";
  width: 1px;
  height: 100%;
- background: #cccccc;
+ background: #000000;
  position: absolute;
  top: 0; 
   -webkit-transition: all 0.3s ease-in-out;
@@ -261,6 +261,13 @@ left: 7px;
      -ms-transform: rotate(45deg);
       -o-transform: rotate(45deg);
          transform: rotate(45deg);
+}
+.img-komodo-footer{ /* Referente ao Drag. Komodo preto no footer*/
+  background-image: url(../images/komodo.png); /*Imagem do Drag. Komodo (pequeno) no rodapé */
+  /*(Referente a imagem da pasta)*/
+  width: 120px; /*Tamanho exato da imagem*/
+  height: 58px; /*Tamanho exato da imagem*/
+  vertical-align: 38px;  /*Alinhamento com o texto do desgraçado do Drag. Komodo  ou mudar para (middle)*/ 
 }
 
 /* botao ppcbutton*/
