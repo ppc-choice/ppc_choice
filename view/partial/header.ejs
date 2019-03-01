@@ -1,0 +1,82 @@
+  <!-- Start Navigation -->
+    <nav class="navbar navbar-default navbar-fixed white bootsnav on no-full no-background">
+
+        <!-- Start Top Search -->
+        <div class="top-search">
+            <div class="container">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span>  </span>
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-addon close-search"><span class="glyphicon glyphicon-remove"></span></span>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Search -->
+
+        <div class="container">            
+            <!-- Start Atribute Navigation -->
+            <div class="attr-nav">
+                <ul>
+                    <% if (typeof user !== 'undefined') { %> 
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="glyphicon glyphicon-cog"></i>
+                            <!-- <span class="badge">2</span> -->
+                        </a>
+                        <ul class="dropdown-menu cart-list animated fadeOutUp" style="display: none; opacity: 1;">
+                            
+                            <li><a href="/logout"> <span class="glyphicon glyphicon-log-out"></span> 
+                                logout
+                            </a></li>
+                            <li><a href="/settings/password"> <span class="glyphicon glyphicon-lock"></span> 
+                                alterar senha
+                            </a></li> 
+                        </ul>
+                    </li>
+                    <% } %>
+                    <li class="search"><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+                    <li class="side-menu"><a href="#"><span class="glyphicon glyphicon-tasks"></span></a></li>
+                </ul>
+            </div>
+            <!-- End Atribute Navigation -->
+
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/home">
+                    <img src="/image/layout/logo-white.png" class="logo logo-display" alt="">
+                    <img src="/image/layout/logo-black.png" class="logo logo-scrolled" alt="">
+                </a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="/comparison">Comparar PPCs</a></li>
+                     <li><a href="#"> <span class="glyphicon glyphicon-user"></span>  
+                    <% if (login) { %>  <%=user.email%> 
+                    <%} else {%> Lebre Saltitante <% } %>
+                    </a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>   
+
+        <!-- Start Side Menu -->
+        <div class="side">
+            <a href="#" class="close-side"><span class="glyphicon glyphicon-remove"></span></a>
+            <div class="widget">
+                <h6 class="title">Mais</h6>
+                <ul class="link">
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- End Side Menu -->
+    </nav>
+    <!-- End Navigation -->

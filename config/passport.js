@@ -1,10 +1,10 @@
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
-const db = require('../routes/db_functions');
+const db = require('./db_functions');
 
 module.exports = function(passport) {
   passport.use(
-    new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
+    new LocalStrategy({ usernameField: 'email', passReqToCallback: true}, (req, email, password, done) => {
       
       const get_users = "SELECT * FROM usuario WHERE email = '" + email + "';"
         db.getRecords( get_users, (result) => {
@@ -23,12 +23,14 @@ module.exports = function(passport) {
 
                   return done(null, user);
               } else {
-                return done(null, false, { message: 'Password incorrect' });
+                req.flash('error_msg', 'Senha incorreta.');
+                return done(null, false, { error_msg: 'Password incorrect' });
               }
             });
           } else
             {
-              return done(null, false, { message: 'That email is not registered' });
+                req.flash('error_msg', 'O e-mail não está registrado.');
+              return done(null, false, {error_msg: 'That email is not registered' });
             }
         })
     })
@@ -38,7 +40,8 @@ module.exports = function(passport) {
     done(null, user.email);
   });
 
-  passport.deserializeUser(function(user, done) {
+  passport.deserializeUser(function(email, done) {
+      var user = { 'email': email };
       done(null, user);
   });
 };

@@ -10,17 +10,19 @@ const session = require('express-session');
 
 require('./config/passport')(passport);
 
-
+if (express().get('env') == 'development'){ require('dotenv').config(); }
 
 const PORT = process.env.PORT || 3000
-const comparison = require('./routes/controller')
-const index = require('./routes/controller')
+const controller = require('./route/controller')
+
+var num;
 
 express()
+.use(express.static(path.join(__dirname, 'public')))
 .use(
   session({
-    secret: 'secret',
-    resave: true,
+    secret: process.env.SECRET,
+    resave: false,
     saveUninitialized: true
   }))
   .use(passport.initialize())
@@ -30,25 +32,18 @@ express()
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
+  res.locals.login = req.isAuthenticated() ? true : false;
   next();
   })
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
+  .set('views', path.join(__dirname, 'view'))
   .engine('ejs', engine)
   .set('view engine', 'ejs')
-  .get('/', index )
-  .post('/login', index )
-  .get('/logout', index )
-  .get('/home', index )
-  .get('/database', comparison )
-  .get('/comparison', comparison )
-  .get('/getGrade/:idCurso', comparison )
-  .get('/compare/:idCursoAtual/:idCursoAlvo', comparison )
-  .get('/settings/password', comparison )
-  .post('/update/password', comparison )
+  .get('/*', controller )
+  .post('/*', controller )
   .use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
+        res.render('./page/error', {
+            title: "Oops! Ocorreu um erro",
             message: err.message,
             error: {}
         });
