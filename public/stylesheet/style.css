@@ -59,8 +59,9 @@ cursor: pointer;
 transition: .3s ease all; 
 
 } 
-
 .pass_show .ptxt:hover{color: #333333;} 
+
+/* painel legenda e estatística*/
 
  .panel-default >.panel-heading
 {
@@ -80,7 +81,15 @@ transition: .3s ease all;
    padding-left: 30px;
  }
 
+/* painel home*/
 
+.panel-default.home-content
+{
+  background-color: #cccccc;
+  color: fff;
+  padding: 30px;
+  border-color: rgba(20,20,20,0.3);
+}
 
  /* **************** COISAS RELACIONADAS AO FOOTER ****************
 Autor: Wellerson Prenholato
@@ -246,8 +255,8 @@ left: 7px;
 /* botao ppcbutton*/
 .btn.btn-danger.ppcbutton
 {
-  background-color: #272525;
-  border-color: #272525;
+  background-color: #3f3f3f; /* #272525;*/
+  border-color: #3f3f3f;/*#272525;*/
 }
 
 /*Login*/
@@ -377,4 +386,8 @@ left: 7px;
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(12, 97, 33);
+}
+
+.section.home-content{
+  background-color: #000;
 }
