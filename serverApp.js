@@ -9,7 +9,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 
 require('./config/passport')(passport);
-
+require('dotenv').config();
 
 
 const PORT = process.env.PORT || 3000
